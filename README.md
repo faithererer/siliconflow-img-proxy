@@ -2,17 +2,17 @@
 
 将 硅基流动生图 API 转成 OpenAI 兼容接口，可用于 Cherry Studio、OneAPI/NewAPI 等聚合平台，直接在聊天里以 Markdown 形式显示图片。
 
-/v1/images/generations：OpenAI 兼容生图
+`/v1/images/generations`：OpenAI 兼容生图
 
-/v1/chat/completions：Markdown 图片输出（![image](URL) 或 data:URI）
+`/v1/chat/completions`：Markdown 图片输出（![image](URL) 或 data:URI）
 
 独立访问鉴权：ALLOW_CLIENT_KEY(S)（与上游 SILICONFLOW_API_KEY 完全分离）
 
 可配置 /v1/models：通过环境变量提供模型清单
 
-多图：n 顺序多次；或 sf_batch_size（若上游模型支持批量）
+多图：`n` 顺序多次；或 `sf_batch_size`（若上游模型支持批量）
 
-自定义参数：sf_seed、sf_num_steps、sf_guidance_scale、sf_cfg、sf_negative_prompt、sf_image_size、sf_batch_size
+自定义参数：`sf_seed、sf_num_steps、sf_guidance_scale、sf_cfg、sf_negative_prompt、sf_image_size、sf_batch_size`
 
 # 🔐 环境变量
 
@@ -28,7 +28,7 @@
 # 🧪 API
 ## 1) 生成图片（OpenAI 兼容）
 
-POST /v1/images/generations
+`POST /v1/images/generations`
 
 ```bash
 curl -X POST "https://<worker>/v1/images/generations" \
@@ -60,7 +60,7 @@ curl -X POST "https://<worker>/v1/images/generations" \
 
 ## 2) 聊天出图（Markdown 渲染）
 
-POST /v1/chat/completions
+`POST /v1/chat/completions`
 
 多轮对话：总是取 messages 中最新的 user 消息为 prompt
 
