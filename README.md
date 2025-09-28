@@ -4,7 +4,7 @@
 
 `/v1/images/generations`：OpenAI 兼容生图
 
-`/v1/chat/completions`：Markdown 图片输出（![image](URL) 或 data:URI）
+`/v1/chat/completions`：Markdown 图片输出（`![image](URL)` 或 data:URI）
 
 独立访问鉴权：ALLOW_CLIENT_KEY(S)（与上游 SILICONFLOW_API_KEY 完全分离）
 
@@ -12,7 +12,10 @@
 
 多图：`n` 顺序多次；或 `sf_batch_size`（若上游模型支持批量）
 
-自定义参数：`sf_seed、sf_num_steps、sf_guidance_scale、sf_cfg、sf_negative_prompt、sf_image_size、sf_batch_size`
+自定义参数：`sf_seed、sf_num_steps、sf_guidance_scale、sf_cfg、sf_negative_prompt、sf_image_size、sf_batch_size` 和官方文档一致
+
+# 部署
+
 
 # 🔐 环境变量
 
